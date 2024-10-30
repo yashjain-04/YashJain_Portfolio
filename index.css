@@ -1,0 +1,343 @@
+body{
+    background-color: black;
+}
+
+.name{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 5vw;
+    background: -webkit-linear-gradient(#000000, #ff0000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+    position: absolute;
+
+    
+    overflow: hidden; /* Ensures that the text is hidden while animating */
+    white-space: nowrap; /* Prevents text wrapping */
+    animation: typing 4s steps(30, end), blink 0.75s step-end infinite; /* Adjust timing as needed */
+}
+
+@keyframes typing {
+    from {
+        width: 0; /* Start from no width */
+    }
+    to {
+        width: 40%; /* Expand to full width */
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Makes the cursor blink */
+    }
+}
+
+.image_css{
+
+    /* Optional: Rounds corners */
+    border-radius: 10px;
+
+    /* Apply a dark, blurred shadow around the image */
+    box-shadow: 0 0 50px 30px rgba(0, 0, 0, 1);
+    
+    filter: grayscale(100%);
+
+    /* Fade effect with gradient overlay */
+    /* mask-image: linear-gradient(to bottom, transparent, black 50%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 50%); */
+
+    mask-image: linear-gradient(to top, transparent, black 50%);
+    -webkit-mask-image: linear-gradient(to top, transparent, black 50%);
+/* 
+    mask-image: linear-gradient(to left, transparent, black 50%);
+    -webkit-mask-image: linear-gradient(to left, transparent, black 50%);
+
+    mask-image: linear-gradient(to right, transparent, black 50%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 50%); */
+}
+
+.image{
+    text-align: center;
+    z-index: -1;
+}
+
+
+.about{
+    color: wheat;
+}
+
+
+.Education{
+    color: wheat;
+}
+
+.Projects{
+    color: wheat;
+}
+
+.Skills{
+    color: wheat;
+}
+
+/*------------ Footer ------------*/
+
+footer{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.page-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+    /* background-color: #45df64;
+    background-image: linear-gradient(180deg, #45df64 0%, #FFFB7D 50%, #eff895 100%); */
+    /* background-color: #08AEEA;
+    background-image: linear-gradient(0deg, #08AEEA 0%, #1bee52 100%); */
+
+    background-color: bisque;
+    background-image: linear-gradient(180deg, bisque 0%, #FFFB7D 100%);
+}
+
+.page-footer .footer-content{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    width: 70%;
+    height: 60%;
+}
+
+.page-footer .footer-content .my-image{
+    position: relative;
+    height: 500px;
+    width: 350px;
+    border-radius: 150px 150px 0 0;
+    background-color: transparent;
+    background-image: url(images/myImage.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.page-footer .footer-content .my-image img{
+    position: absolute;
+    opacity: 0;
+    z-index: 10;
+    background-position: center;
+    width: fit-content;
+    height: 300px;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+@media(min-width:700px){
+    .page-footer .footer-content .my-image :hover{
+        opacity: 1;
+        border-radius: 25%;
+        background-color: rgba(255, 255,255, 0.3);
+    }
+}
+
+.page-footer .footer-content #name{
+    font-weight: bolder;
+    font-size: 4rem;
+    letter-spacing: 0.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.page-footer .footer-content .mail{
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.page-footer .footer-content .mail i{
+    position: relative;
+    top: 3px;
+    font-size: 20px;
+}
+
+.page-footer .footer-content .section{
+    height: 150px;
+}
+
+.page-footer .footer-content .social-links{
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.page-footer .footer-content .social-links i{
+    position: relative;
+    top: 3px;
+    font-size: 20px;
+}
+
+.page-footer .footer-content .social-links .leetcode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 4px;
+}
+
+/* .page-footer .footer-content .social-links .linked-in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.page-footer .footer-content .social-links .instagram{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.page-footer .footer-content .social-links .leetcode .leetcode-logo{
+    height: 20px;
+    width: 20px;
+    background-image: url(images/leetcode.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 5%;
+}
+
+.page-footer .footer-content .social-links a{
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+
+@media( (max-width : 310px) ){
+    .page-footer .footer-content{
+        width: 55%;
+        height: 50%;
+    }
+    .page-footer .footer-content .my-image{
+        height: 300px;
+        width: 150px;
+    }
+
+    .page-footer .footer-content #name{
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .page-footer .footer-content .mail{
+        font-size: 0.7rem;
+    }
+
+    .page-footer .footer-content .social-links{
+
+        gap: 4px;
+        flex-direction: column;
+        font-size: 0.8rem;
+    }
+
+    .page-footer .footer-content .social-links i{
+        font-size: 20px;
+    }
+
+    .page-footer .footer-content .social-links .leetcode .leetcode-logo{
+        height: 20px;
+        width: 20px;
+    }
+
+    .page-footer .footer-content .section{
+        height: 55px;
+    }
+}
+
+
+@media( (min-width : 310px) AND (max-width : 500px) ){
+    .page-footer .footer-content .my-image{
+        height: 300px;
+        width: 210px;
+    }
+
+    .page-footer .footer-content #name{
+        font-size: 2.1rem;
+        letter-spacing: 0.3rem;
+    }
+
+    .page-footer .footer-content .mail{
+        top: 3px;
+        font-size: 0.8rem;
+    }
+
+    .page-footer .footer-content .mail i{
+        position: relative;
+        top: 3px;
+        font-size: 16px;
+    }
+
+    .page-footer .footer-content .social-links{
+        gap: 4px;
+        flex-direction: column;
+        font-size: 0.7rem;
+    }
+
+    .page-footer .footer-content .social-links i{
+        font-size: 20px;
+    }
+
+    .page-footer .footer-content .social-links .leetcode #leetcode-link{
+        top: 10px;
+    }
+
+    .page-footer .footer-content .social-links .leetcode .leetcode-logo{
+        height: 20px;
+        width: 20px;
+        margin-right: 3.5px;
+    }
+
+    .page-footer .footer-content .section{
+        height: 70px;
+    }
+}
+
+
+@media( (min-width : 500px) AND (max-width : 800px) ){
+    .page-footer .footer-content .my-image{
+        height: 400px;
+        width: 300px;
+    }
+
+    .page-footer .footer-content #name{
+        font-size: 3.1rem;
+        letter-spacing: 0.3rem;
+    }
+
+    .page-footer .footer-content .mail{
+        font-size: 1.1rem;
+    }
+
+    .page-footer .footer-content .social-links{
+
+        gap: 4px;
+        flex-direction: column;
+        font-size: 0.9rem;
+    }
+
+    .page-footer .footer-content .social-links i{
+        font-size: 20px;
+    }
+
+    .page-footer .footer-content .social-links .leetcode .leetcode-logo{
+        height: 20px;
+        width: 20px;
+    }
+}
